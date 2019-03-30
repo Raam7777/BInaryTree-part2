@@ -226,7 +226,7 @@ ariel::Tree::node* ariel::Tree::contains_node(int i, node* n){
 
 int ariel::Tree::root(){
   if(T_root==NULL){
-    throw ("The tree is empty");
+    throw "The tree is empty";
   }
   return T_root->data;
 }
@@ -234,7 +234,7 @@ int ariel::Tree::root(){
 int ariel::Tree::parent(int i){
   node* current = contains_node(i, T_root);
   if(current == T_root){
-    throw ("The root has no parent");
+    throw "The root has no parent";
   }
   return find_parent(i, T_root);
 }
@@ -259,7 +259,7 @@ int ariel::Tree::find_parent(int i, node* n){
 int ariel::Tree::left(int i){
   node *current = contains_node(i,T_root);
   if(current==NULL || current->left == NULL){
-    throw ("to the leaf no left children");
+    throw "to the leaf no left children";
   }
   return current->left->data;
 }
@@ -267,7 +267,7 @@ int ariel::Tree::left(int i){
 int ariel::Tree::right(int i){
   node *current = contains_node(i,T_root);
   if(current==NULL || current->right == NULL){
-    throw ("to the leaf no right children");
+    throw "to the leaf no right children";
   }
   return current->right->data;
 }
