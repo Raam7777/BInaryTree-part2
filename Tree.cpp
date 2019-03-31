@@ -63,9 +63,6 @@ void ariel::Tree::insertNode(int i, node* ptr){
       ptr->right = createLeaf(i);
     }
   }
-  else{
-    cout << "The index" << i <<" has already been added to the tree\n";
-  }
 }
 
 void ariel::Tree::print(){
