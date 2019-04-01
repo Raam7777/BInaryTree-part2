@@ -17,13 +17,13 @@ namespace ariel {
     int T_size(node* n);
     node *contains_node(int i, node* n);
     int find_parent(int i, node* n);
-    //void remove_Tree(node* n);
+    void remove_Tree(node* n);
 
 
   public:
 
     Tree();
-  //  ~Tree();
+    ~Tree();
     node *createLeaf(int i);
     void insert(int i);
     int findSmallest();
