@@ -67,11 +67,13 @@ void ariel::Tree::print(){
 
 void ariel::Tree::printInOrder(const struct node *ptr){
   if(T_root != NULL){
-    if(ptr->left != NULL)
+    if(ptr->left != NULL){
       printInOrder(ptr->left);
+    }
     cout << ptr->data << " ";
-    if(ptr->right != NULL)
+    if(ptr->right != NULL){
       printInOrder(ptr->right);
+    }
   }
   else{
     throw "The tree is empty";
