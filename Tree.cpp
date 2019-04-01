@@ -228,7 +228,7 @@ int ariel::Tree::root(){
 
 int ariel::Tree::parent(int i){
   node* current = contains_node(i, T_root);
-  if(current == NULL || T_root->data==i){
+  if(current == T_root){
     throw "The root has no parent";
   }
   return find_parent(i, T_root);
