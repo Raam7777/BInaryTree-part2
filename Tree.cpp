@@ -9,7 +9,7 @@ using namespace std;
 ariel::Tree::Tree(){
      T_root = NULL;
 }
-/*
+
 ariel::Tree::~Tree(){
   remove_Tree(T_root);
 }
@@ -21,7 +21,7 @@ void ariel::Tree::remove_Tree(node* n){
     delete n;
   }
 }
-*/
+
 ariel::Tree::node* ariel::Tree::createLeaf(int i){
 
   node* new_node = new node();
