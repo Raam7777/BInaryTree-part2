@@ -16,8 +16,12 @@ ariel::Tree::~Tree(){
 
 void ariel::Tree::remove_Tree(node* n){
   if(n != NULL){
-    remove_Tree(n->left);
-    remove_Tree(n->right);
+       if(n->left != NULL){
+          remove_Tree(n->left);
+       }
+       if(n->right != NULL){
+          remove_Tree(n->right);
+       }
     delete n;
   }
 }
