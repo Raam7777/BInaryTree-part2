@@ -224,49 +224,29 @@ int ariel::Tree::root(){
   return T_root->data;
 }
 
-int ariel::Tree::parent(int i)
-{
-    Node* current=contains_node(i,tree_root);
-    if (current==tree_root)
-    {
-        throw "The root has no parent";
-    }
-    Node* parent=find_parent(i,tree_root);
-    return parent->value;
+int ariel::Tree::parent(int i){
+  node* current = contains_node(i, T_root);
+  if(current == T_root){
+    throw "The root has no parent";
+  }
+  return find_parent(i, T_root);
 }
- /*
- A function that receives a value and node, 
- return this node parent
-*/    
- ariel::Tree:: Node* ariel::Tree::find_parent(int i, Node* n)
- {
-   
-     if (n == NULL)
-     {
-       return NULL;
-     }
 
-    if(n->left == NULL && n->right == NULL)
-    {
-       return NULL;
+int ariel::Tree::find_parent(int i, node* n){
+  if(i < n->data){
+    if(n->left->data == i){
+      return n->data;
     }
-
-    if( (n->left != NULL && n->left->value == i)|| (n->right != NULL && n->right->value == i))
-    {
-       return n;
+    else{
+      return find_parent(i, n->left);
     }
-
-    if(n->value > i)
-    {
-       return find_parent(i,n->left);
-    }
-
-    if(n->value < i)
-    {
-       return find_parent(i,n->right);
-    }
-
-    return NULL;
+  }
+  else if(n->right->data == i){
+    return n->data;
+  }
+  else{
+    return find_parent(i, n->right);
+  }
 }
 
 int ariel::Tree::left(int i){
