@@ -118,7 +118,7 @@ void ariel::Tree::removeNode(int i, node *ptr){
         ptr->left->data == i ? removeMatch(ptr, ptr->left, true) : removeNode(i, ptr->left);
       }
       else if(i > ptr->data && ptr->right != NULL){
-        ptr->right->data == i ? removeMatch(ptr, ptr->right, true) : removeNode(i, ptr->right);
+        ptr->right->data == i ? removeMatch(ptr, ptr->right, false) : removeNode(i, ptr->right);
       }
     }
   }
